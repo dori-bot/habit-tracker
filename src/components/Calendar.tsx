@@ -29,6 +29,8 @@ function DayCell({
   if (isSelected) className += ' selected'
 
   const fillHeight = isInProgress ? progress * 100 : 0
+  // Calculate clip-path for inverted text (100% - fillHeight from top)
+  const clipTop = 100 - fillHeight
 
   return (
     <div className={className} onClick={onClick}>
@@ -36,11 +38,23 @@ function DayCell({
         className="progress-fill" 
         style={{ height: `${fillHeight}%` }} 
       />
+      {/* Normal text layer */}
       <div className="day-content">
         <span className="day-name">{day.dayName}</span>
         <span className="day-number">{day.dayNumber}</span>
         <span className="month-name">{day.monthName}</span>
       </div>
+      {/* Inverted text layer - clips to show only where progress fill is */}
+      {isInProgress && (
+        <div 
+          className="day-content-inverted"
+          style={{ '--clip-top': `${clipTop}%` } as React.CSSProperties}
+        >
+          <span className="day-name">{day.dayName}</span>
+          <span className="day-number">{day.dayNumber}</span>
+          <span className="month-name">{day.monthName}</span>
+        </div>
+      )}
     </div>
   )
 }

@@ -34,6 +34,18 @@ h1 {
   margin-bottom: 40px;
 }
 
+.sync-status {
+  font-size: 0.8rem;
+}
+
+.sync-status.synced {
+  color: #22c55e;
+}
+
+.sync-status.local {
+  color: #f97316;
+}
+
 .main-content {
   display: flex;
   gap: 40px;
