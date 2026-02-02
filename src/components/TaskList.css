@@ -1,0 +1,81 @@
+.tasks-wrapper {
+  position: relative;
+  padding-right: 20px;
+}
+
+.selected-date {
+  color: #7c3aed;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.task-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.task-checkbox:hover {
+  border-color: #7c3aed;
+}
+
+.task-checkbox.checked {
+  background: #22c55e;
+  border-color: #22c55e;
+}
+
+.task-checkbox.checked::after {
+  content: '✓';
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.task-label {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.task-item.completed .task-label {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Progress bar on right side */
+.progress-bar-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #e5e5e5;
+  border-radius: 3px;
+}
+
+.progress-bar-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to top, #7c3aed, #a78bfa);
+  border-radius: 3px;
+  transition: height 0.3s ease;
+}

@@ -1,0 +1,102 @@
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day-cell {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  background: #f8f8fa;
+  min-width: 50px;
+  overflow: hidden;
+}
+
+.day-cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.day-cell.selected {
+  box-shadow: 0 0 0 2px #7c3aed;
+}
+
+.day-cell .day-name {
+  font-size: 0.65rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.day-cell .day-number {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.day-cell .month-name {
+  font-size: 0.7rem;
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+/* Progress fill - orange gradient that fills from bottom */
+.day-cell .progress-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, #f97316, #fb923c);
+  transition: height 0.3s ease;
+  z-index: 0;
+  border-radius: 0 0 12px 12px;
+}
+
+.day-cell .day-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Complete state - green */
+.day-cell.complete {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.day-cell.complete .day-number,
+.day-cell.complete .day-name {
+  color: white;
+}
+
+.day-cell.complete .month-name {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* In progress state text adjustments */
+.day-cell.in-progress .day-number,
+.day-cell.in-progress .day-name {
+  color: #1a1a1a;
+}
+
+@media (max-width: 900px) {
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .day-cell {
+    min-width: 40px;
+  }
+
+  .day-cell .day-number {
+    font-size: 1.1rem;
+  }
+}
