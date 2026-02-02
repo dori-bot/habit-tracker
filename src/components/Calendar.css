@@ -85,9 +85,12 @@
 }
 
 .day-cell .day-content-inverted .day-name,
-.day-cell .day-content-inverted .day-number,
-.day-cell .day-content-inverted .month-name {
+.day-cell .day-content-inverted .day-number {
   color: white;
+}
+
+.day-cell .day-content-inverted .month-name {
+  color: #f97316;
 }
 
 /* Complete state - green */
