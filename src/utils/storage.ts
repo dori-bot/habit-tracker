@@ -1,9 +1,9 @@
 export const DEFAULT_TASKS = [
-  'Meditate for 10 min',
-  'Drink 8 glasses of water',
-  'Read 20 pages (non-fiction)',
-  '30 minutes of physical activity',
-  'Journal one positive memory'
+  'Animation work',
+  'Quran reading',
+  'Exercise 30 mins',
+  'Agent Startup work',
+  'Review day with Ledori'
 ]
 
 export interface DaysData {
