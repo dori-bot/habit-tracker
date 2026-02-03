@@ -43,7 +43,11 @@ h1 {
 }
 
 .sync-status.local {
-  color: #f97316;
+  color: #888;
+}
+
+.sync-status.error {
+  color: #ef4444;
 }
 
 .main-content {
