@@ -3,7 +3,7 @@ export const DEFAULT_TASKS = [
   'Quran reading',
   'Exercise 30 mins',
   'Agent Startup work',
-  'Review day with Ledori'
+  'Study/Uni'
 ]
 
 export interface DaysData {
