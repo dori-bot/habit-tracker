@@ -1,4 +1,5 @@
-import { Subtask, DEFAULT_SUBTASKS, DEFAULT_TASKS } from './storage'
+import type { Subtask } from './storage'
+import { DEFAULT_SUBTASKS } from './storage'
 
 const SUBTASKS_KEY = 'habitTrackerSubtasks'
 
