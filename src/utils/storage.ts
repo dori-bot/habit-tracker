@@ -3,7 +3,9 @@ export const DEFAULT_TASKS = [
   'Quran reading',
   'Exercise 30 mins',
   'Agent Startup work',
-  'Study/Uni'
+  'Study/Uni',
+  'One-question writing (15 min)',
+  'Read daily (30 min)'
 ]
 
 export interface Subtask {
