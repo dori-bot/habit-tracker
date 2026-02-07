@@ -1,10 +1,26 @@
 export const DEFAULT_TASKS = [
-  'Animation work',
+  '1 animation done',
   'Quran reading',
   'Exercise 30 mins',
   'Agent Startup work',
   'Study/Uni'
 ]
+
+export interface Subtask {
+  id: string
+  text: string
+  completed: boolean
+}
+
+export interface TaskWithSubtasks {
+  name: string
+  subtasks: Subtask[]
+}
+
+// Predefined subtasks for specific tasks
+export const DEFAULT_SUBTASKS: { [taskName: string]: string[] } = {
+  'Agent Startup work': ['Ship one feature']
+}
 
 export interface DaysData {
   [key: string]: boolean[]
